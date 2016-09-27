@@ -1,3 +1,1 @@
-I'm still getting this setup, I'm not certain that this will work.  I think I may have messed up by creating the project file inside of the GitHub repository, instead of using Source Control inside of Visual Studio.
-
-I'll update this file after I try recreating with Source Control.
+I believe this should be working now.  Clone to your machine, open the .sln file, and you should see everything.
