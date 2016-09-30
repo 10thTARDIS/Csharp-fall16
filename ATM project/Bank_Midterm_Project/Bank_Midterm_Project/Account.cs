@@ -12,7 +12,7 @@ namespace ConsoleApplication2
         double depositAmount = 0;
         double total = 0;
 
-        public void deposit()
+        private void deposit()
         {
             Console.WriteLine("Enter amount of deposit");
             depositAmount = Convert.ToInt32(Console.ReadLine());
@@ -20,13 +20,13 @@ namespace ConsoleApplication2
             Console.WriteLine("Congratulations, you have successfully deposited $" + depositAmount + " into your account.\nYour total balance is currently $" + total);
 
         }
-        public void withdraw()
+        private void withdraw()
         {
             Console.WriteLine("I'm in withdraw");
 
         }
 
-        public void calcInt()
+        private void calcInt()
         {
             Console.WriteLine("I'm in Check Balance");
         }
@@ -77,7 +77,7 @@ namespace ConsoleApplication2
 
 
         }
-
+        
 
     }
 }
