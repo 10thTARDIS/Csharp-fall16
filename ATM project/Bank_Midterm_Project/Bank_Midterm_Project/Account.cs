@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace Bank_Midterm_Project
 {
-    class Account
+    public class Account
     {
         double balance;
         double depositAmount = 0;
         double total = 0;
+        internal string name;
+        //private double v;
 
-        private void deposit()
+        //public Account(double v)
+        //{
+        //    this.v = v;
+        //}
+
+        public void deposit()
         {
             Console.WriteLine("Enter amount of deposit");
             depositAmount = Convert.ToInt32(Console.ReadLine());
@@ -20,64 +27,69 @@ namespace Bank_Midterm_Project
             Console.WriteLine("Congratulations, you have successfully deposited $" + depositAmount + " into your account.\nYour total balance is currently $" + total);
 
         }
-        private void withdraw()
+        public void withdraw()
         {
             Console.WriteLine("I'm in withdraw");
 
         }
 
-        private void calcInt()
+        public void calcInt()
         {
             Console.WriteLine("I'm in Check Balance");
         }
-        public void menu()
+
+        internal void menu()
         {
-            int input = 0;
-            while (input != 4)
-            {
-                Console.WriteLine("Please enter a choice:");
-                Console.WriteLine("1) Deposit");
-                Console.WriteLine("2) Withdraw");
-                Console.WriteLine("3) Check Balance");
-                Console.WriteLine("4) Exit");
-
-                input = Convert.ToInt32(Console.ReadLine());
-
-
-                if (input == 1)
-                {
-                    deposit();
-
-                }
-
-                else if (input == 2)
-                {
-                    withdraw();
-
-                }
-
-                else if (input == 3)
-                {
-                    calcInt();
-
-                }
-
-                else if (input == 4)
-                {
-
-                }
-
-
-                else if (input != 1 || input != 2 || input != 3 || input != 4) //not finished.  || = or, && = and
-                {
-                    Console.WriteLine("Invalid input");
-
-                }
-            }
-
-
+            throw new NotImplementedException();
         }
-        
+
+        //public void menu()
+        //{
+        //    int input = 0;
+        //    while (input != 4)
+        //    {
+        //        Console.WriteLine("Please enter a choice:");
+        //        Console.WriteLine("1) Deposit");
+        //        Console.WriteLine("2) Withdraw");
+        //        Console.WriteLine("3) Check Balance");
+        //        Console.WriteLine("4) Exit");
+
+        //        input = Convert.ToInt32(Console.ReadLine());
+
+
+        //        if (input == 1)
+        //        {
+        //            deposit();
+
+        //        }
+
+        //        else if (input == 2)
+        //        {
+        //            withdraw();
+
+        //        }
+
+        //        else if (input == 3)
+        //        {
+        //            calcInt();
+
+        //        }
+
+        //        else if (input == 4)
+        //        {
+
+        //        }
+
+
+        //        else if (input != 1 || input != 2 || input != 3 || input != 4) //not finished.  || = or, && = and
+        //        {
+        //            Console.WriteLine("Invalid input");
+
+        //        }
+        //    }
+
 
     }
+
+
 }

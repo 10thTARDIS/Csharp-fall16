@@ -10,8 +10,7 @@ namespace Bank_Midterm_Project
 {
     public class RunAccount
     {
-        //RunAccount[] acctscreated = new RunAccount();  // Yeah, no idea what I'm doing here.  Initializing a boolean for acctscreated, but I don't know how to do that yet.
-
+        
         bool acctscreated;
         public static void Main(String[] args)
         {
@@ -67,7 +66,14 @@ namespace Bank_Midterm_Project
 
             }
         }
-        
+
+        private void readArray()
+        {
+            throw new NotImplementedException();
+        }
+        Account[] acctArray = new Account[i];
+        private static int i;
+
         public void populateArray()
         {
             for (int i = 0; i <= acctArray.Length; i++)
@@ -96,14 +102,19 @@ namespace Bank_Midterm_Project
         }
         public void writeArray()
         {
-            Stream FileStream = File.Create(“test.xml”);
-            XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
-            serializer.Serialize(FileStream, acctArray);
-            FileStream.Close();
+            Console.WriteLine("I'm in writeArray");
+        //    Stream FileStream = File.Create(“test.xml”);
+        //    XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
+        //    serializer.Serialize(FileStream, acctArray);
+        //    FileStream.Close();
+        //}
+        //public void readArray()
+        //{
+        //    Stream FileStream = File.OpenRead(“test.xml”); //needs a specific path location
+        //    XmlSerializer deserializer = new XmlSerializer(typeof(Account[]));
+        //    acctArray = (Account[]) deserializer.Deserializ(FileStream);
+        //    FileStream.Close();
         }
-    public void readArray()
-        {
 
-        }
-    }
+}
 }
