@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Bank_Midterm_Project
 {
     public class RunAccount
     {
-        RunAccount[] acctscreated = new RunAccount();  // Yeah, no idea what I'm doing here.  Initializing a boolean for acctscreated, but I don't know how to do that yet.
+        //RunAccount[] acctscreated = new RunAccount();  // Yeah, no idea what I'm doing here.  Initializing a boolean for acctscreated, but I don't know how to do that yet.
 
             bool 
         public static void Main(String[] args)
@@ -94,9 +96,12 @@ namespace Bank_Midterm_Project
         }
         public void writeArray()
         {
-            Stream FileStream = FileStream.Create
+            Stream FileStream = File.Create(“test.xml”);
+            XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
+            serializer.Serialize(FileStream, acctArray);
+            FileStream.Close();
         }
-        public void readArray()
+    public void readArray()
         {
 
         }
