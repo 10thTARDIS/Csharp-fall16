@@ -12,7 +12,7 @@ namespace Bank_Midterm_Project
     {
         //RunAccount[] acctscreated = new RunAccount();  // Yeah, no idea what I'm doing here.  Initializing a boolean for acctscreated, but I don't know how to do that yet.
 
-            bool 
+        bool acctscreated;
         public static void Main(String[] args)
         {
             RunAccount ra = new RunAccount();
