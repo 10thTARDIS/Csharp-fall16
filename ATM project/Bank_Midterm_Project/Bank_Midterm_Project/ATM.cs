@@ -9,7 +9,7 @@ namespace Bank_Midterm_Project
     public class ATM
     {
         bool acctsPopulated;
-        Account[] acctArray = new Account[3];
+        //Account[] acctArray = new Account[3];
         public static void Main(string[] args)
         {
             ATM atm = new ATM();
@@ -61,18 +61,19 @@ namespace Bank_Midterm_Project
 
             public void PopulateAccounts()
         {
-            for (int i = 0; i < acctArray.Length; i++)
+            //for(int i = 0; i < acctArray.Length; i++)
             {
                 //acctArray[i] = new Account(100.00);
             }
             acctsPopulated = true;
         }
 
+
         public void SelectAccount()
         {
             Console.WriteLine("Which account?");
             int input = Convert.ToInt32(Console.ReadLine());
-            acctArray[input - 1].menu();
+            //acctArray[input - 1].menu();
         }
         // squigly line in picture
         public void newAccount()
