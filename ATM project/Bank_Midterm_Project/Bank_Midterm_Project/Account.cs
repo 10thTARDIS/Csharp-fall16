@@ -10,14 +10,9 @@ namespace Bank_Midterm_Project
     {
         double balance;
         double depositAmount = 0;
-        double total = 0;
+        double withdrawalAmount = 0;
+        double total = 100;
         internal string name;
-        //private double v;
-
-        //public Account(double v)
-        //{
-        //    this.v = v;
-        //}
 
         public void deposit()
         {
@@ -25,12 +20,13 @@ namespace Bank_Midterm_Project
             depositAmount = Convert.ToInt32(Console.ReadLine());
             total = total + depositAmount;
             Console.WriteLine("Congratulations, you have successfully deposited $" + depositAmount + " into your account.\nYour total balance is currently $" + total);
-
         }
         public void withdraw()
         {
-            Console.WriteLine("I'm in withdraw");
-
+            Console.WriteLine("Enter amount of withdrawal:\t");
+            withdrawalAmount = Convert.ToInt32(Console.ReadLine());
+            total = total - withdrawalAmount;
+            Console.WriteLine("Congratulations, you have successfully withdrawn $" + withdrawalAmount + " from your account.\nYour total balance is currently $" + total);
         }
 
         public void calcInt()
@@ -45,54 +41,5 @@ namespace Bank_Midterm_Project
         {
             throw new NotImplementedException();
         }
-
-        //public void menu()
-        //{
-        //    int input = 0;
-        //    while (input != 4)
-        //    {
-        //        Console.WriteLine("Please enter a choice:");
-        //        Console.WriteLine("1) Deposit");
-        //        Console.WriteLine("2) Withdraw");
-        //        Console.WriteLine("3) Check Balance");
-        //        Console.WriteLine("4) Exit");
-
-        //        input = Convert.ToInt32(Console.ReadLine());
-
-
-        //        if (input == 1)
-        //        {
-        //            deposit();
-
-        //        }
-
-        //        else if (input == 2)
-        //        {
-        //            withdraw();
-
-        //        }
-
-        //        else if (input == 3)
-        //        {
-        //            calcInt();
-
-        //        }
-
-        //        else if (input == 4)
-        //        {
-
-        //        }
-
-
-        //        else if (input != 1 || input != 2 || input != 3 || input != 4) //not finished.  || = or, && = and
-        //        {
-        //            Console.WriteLine("Invalid input");
-
-        //        }
-        //    }
-
-
     }
-
-
 }

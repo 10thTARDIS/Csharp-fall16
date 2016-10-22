@@ -12,9 +12,23 @@ namespace Bank_Midterm_Project
         //Account[] acctArray = new Account[3];
         public void mainATM()
         {
-            ATM atm = new ATM();
+            //Ask for current date
+            ATM atm = new Bank_Midterm_Project.ATM();
+            atm.PromptDateTime();
+
             atm.topMenu();
         }
+        public void PromptDateTime()
+        {
+            Console.WriteLine("Day: ");
+            var day = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Month: ");
+            var month = Convert.ToInt32(Console.ReadLine());
+
+            DateTime d1 = return new DateTime(0, month, day, 0, 0, 0, 0);
+        }
+
         public void topMenu()
         {
             int input = 0;
