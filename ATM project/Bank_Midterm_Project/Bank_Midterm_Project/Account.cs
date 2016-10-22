@@ -36,6 +36,9 @@ namespace Bank_Midterm_Project
         public void calcInt()
         {
             Console.WriteLine("I'm in Check Balance");
+            DateTime d1;
+            DateTime d2;
+            //return (d1 - d2).TotalDays;
         }
 
         internal void menu()

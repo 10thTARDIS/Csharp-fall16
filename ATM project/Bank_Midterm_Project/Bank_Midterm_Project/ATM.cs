@@ -10,7 +10,7 @@ namespace Bank_Midterm_Project
     {
         bool acctsPopulated;
         //Account[] acctArray = new Account[3];
-        public static void Main(string[] args)
+        public void mainATM()
         {
             ATM atm = new ATM();
             atm.topMenu();
