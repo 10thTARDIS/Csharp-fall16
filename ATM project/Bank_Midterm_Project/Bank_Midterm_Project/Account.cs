@@ -8,11 +8,58 @@ namespace Bank_Midterm_Project
 {
     public class Account
     {
-        double balance;
+        double balance = 100;
         double depositAmount = 0;
         double withdrawalAmount = 0;
         double total = 100;
-        internal string name;
+        DateTime d1;
+        DateTime d2;
+        String ID;
+
+        public Account(String arg_ID)
+        {
+            ID = arg_ID;
+        }
+
+        public void menu()
+        {
+            int input = 0;
+            while (input != 4)
+            {
+                Console.WriteLine("Welcome to the Bank of UMSL.\n Please enter a choice:");
+                Console.WriteLine("1) Deposit");
+                Console.WriteLine("2) Withdraw");
+                Console.WriteLine("3) Check Balance");
+                Console.WriteLine("4) Exit");
+
+                input = Convert.ToInt32(Console.ReadLine());
+                if (input == 1)
+                {
+                    deposit();
+                }
+
+                else if (input == 2)
+                {
+                    withdraw();
+                }
+
+                else if (input == 3)
+                {
+                    calcInt();
+                }
+
+                else if (input == 4)
+                {
+
+                }
+
+
+                else if (input != 1 || input != 2 || input != 3 || input != 4) //not finished.  || = or, && = and
+                {
+                    Console.WriteLine("Invalid input, please try again.");
+
+                }
+            }
 
         public void deposit()
         {
@@ -32,14 +79,11 @@ namespace Bank_Midterm_Project
         public void calcInt()
         {
             Console.WriteLine("I'm in Check Balance");
-            DateTime d1;
-            DateTime d2;
+            
             //return (d1 - d2).TotalDays;
+            Console.WriteLine("Your current balance as of " + d1 + " is $" + balance);
         }
 
-        internal void menu()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

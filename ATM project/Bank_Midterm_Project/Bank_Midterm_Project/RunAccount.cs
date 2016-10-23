@@ -10,8 +10,10 @@ namespace Bank_Midterm_Project
 {
     public class RunAccount
     {
-        
+        Account[] acctArray = new Account[3];
+        private static int i;
         bool acctscreated = false;
+        bool acctsloaded = false;
         public static void Main(String[] args)
         {
             RunAccount ra = new RunAccount();
@@ -26,17 +28,17 @@ namespace Bank_Midterm_Project
 
                 input = Convert.ToInt32(Console.ReadLine());
 
-                if (input == 1 && ra.acctscreated == false) // Using a boolean may be a good idea
+                if (input == 1 && ra.acctscreated == false)
                 {
                     ra.populateArray();
                 }
-                else if (input == 2 && ra.acctscreated == false)
+                else if (input == 2 && ra.acctsloaded == false)
                 {
                     ra.readArray();
                 }
                 else if (input == 3 && ra.acctscreated == true)
                 {
-
+                    ra.pickAccountMenu();
                 }
                 else
                 {
@@ -56,8 +58,8 @@ namespace Bank_Midterm_Project
 
 
             } while (input != 5);
-                ATM atm = new ATM();
-                atm.topMenu();
+                //ATM atm = new ATM();
+                //atm.topMenu();
 
 
 
@@ -71,20 +73,19 @@ namespace Bank_Midterm_Project
         {
             throw new NotImplementedException();
         }
-        Account[] acctArray = new Account[i];
-        private static int i;
+       
 
         public void populateArray()
         {
-            int[] acctArray = new int[3];
+            //int[] acctArray = new int[3];
             //prompt for username
             Console.WriteLine("Please enter three account numbers, separated by spaces:");
-            for (int i = 0; i <= acctArray.Length; i++)
+            string[] tokens = Console.ReadLine().Split();
+            for (int i = 0; i < acctArray.Length; i++)
             {
-                acctArray[i] = Convert.ToInt32(Console.ReadLine());
+                acctArray[i] = new Account(tokens[i]);
             }
-            RunAccount rac = new RunAccount();
-            rac.acctscreated = true;
+            acctscreated = true;
         }
 
         public void pickAccountMenu()
