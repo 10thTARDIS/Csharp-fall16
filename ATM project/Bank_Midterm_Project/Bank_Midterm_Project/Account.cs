@@ -50,7 +50,9 @@ namespace Bank_Midterm_Project
 
                 else if (input == 4)
                 {
-
+                    Console.WriteLine("Thank you for banking with the Bank of UMSL.");
+                    RunAccount ra = new RunAccount();
+                    ra.writeArray();
                 }
 
 

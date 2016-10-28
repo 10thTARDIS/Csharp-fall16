@@ -11,6 +11,7 @@ namespace Bank_Midterm_Project
     public class RunAccount
     {
         Account[] acctArray = new Account[3];
+        RunAccount ra = new RunAccount();
         //private static int i;
         bool acctscreated = false;
         bool acctsloaded = false;
@@ -40,6 +41,10 @@ namespace Bank_Midterm_Project
                 {
                     ra.pickAccountMenu();
                 }
+                else if (input == 4)
+                {
+                    ra.writeArray();
+                }
                 else
                 {
                     if (input == 1 && ra.acctscreated == true)
@@ -58,22 +63,30 @@ namespace Bank_Midterm_Project
 
 
             } while (input != 5);
+        }
                 //ATM atm = new ATM();
                 //atm.topMenu();
 
 
 
-        //ra.writeArray();
-        //{
-
-        //}
-    }
-
-        private void readArray()
+        public void writeArray()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("\nYour changes have been saved.  Goodbye.");
+
+            Stream FileStream = File.Create("test.xml");
+            XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
+            serializer.Serialize(FileStream, ra.acctArray);
+            FileStream.Close();
         }
-       
+
+        public void readArray()
+        {
+            Stream FileStream = File.OpenRead("test.xml");
+            XmlSerializer deserializer = new XmlSerializer(typeof(Account[]));
+            acctArray = (Account[])deserializer.Deserialize(FileStream);
+            FileStream.Close();
+        }
+
 
         public void populateArray()
         {
@@ -99,7 +112,7 @@ namespace Bank_Midterm_Project
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
                 {
-                    acctArray[input].menu();
+                    ra.acctArray[input].menu();
                 }
             }
         }
