@@ -11,7 +11,7 @@ namespace Bank_Midterm_Project
     public class RunAccount
     {
         Account[] acctArray = new Account[3];
-        private static int i;
+        //private static int i;
         bool acctscreated = false;
         bool acctsloaded = false;
         public static void Main(String[] args)

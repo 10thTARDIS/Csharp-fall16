@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bank_Midterm_Project
-{
-    public class ATM
-    {
-        //bool acctsPopulated;
-        //Account[] acctArray = new Account[3];
-        public void mainATM()
-        {
-            //Ask for current date
-            ATM atm = new Bank_Midterm_Project.ATM();
-            atm.PromptDateTime();
+//namespace Bank_Midterm_Project
+//{
+    //public class ATM
+    //{
+    //    //bool acctsPopulated;
+    //    //Account[] acctArray = new Account[3];
+    //    public void mainATM()
+    //    {
+    //        //Ask for current date
+    //        ATM atm = new Bank_Midterm_Project.ATM();
+    //        atm.PromptDateTime();
 
-            //atm.topMenu();
-        }
-        public void PromptDateTime()
-        {
-            Console.WriteLine("Day: ");
-            var day = Convert.ToInt32(Console.ReadLine());
+    //        //atm.topMenu();
+    //    }
+    //    public void PromptDateTime()
+    //    {
+    //        Console.WriteLine("Day: ");
+    //        var day = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Month: ");
-            var month = Convert.ToInt32(Console.ReadLine());
+    //        Console.WriteLine("Month: ");
+    //        var month = Convert.ToInt32(Console.ReadLine());
 
-            // DateTime d1 = return new DateTime(0, month, day, 0, 0, 0, 0);
-        }
+    //        // DateTime d1 = return new DateTime(0, month, day, 0, 0, 0, 0);
+    //    }
 
         //public void topMenu()
         //{
@@ -120,5 +120,5 @@ namespace Bank_Midterm_Project
         //    }
 
 
-    }
-}
+//    }
+//}

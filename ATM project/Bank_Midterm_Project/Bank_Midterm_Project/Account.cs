@@ -60,6 +60,7 @@ namespace Bank_Midterm_Project
 
                 }
             }
+        }
 
         public void deposit()
         {
@@ -78,7 +79,7 @@ namespace Bank_Midterm_Project
 
         public void calcInt()
         {
-            Console.WriteLine("I'm in Check Balance");
+            Console.WriteLine("Please enter the current date:");
             
             //return (d1 - d2).TotalDays;
             Console.WriteLine("Your current balance as of " + d1 + " is $" + balance);
