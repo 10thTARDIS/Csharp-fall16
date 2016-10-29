@@ -12,13 +12,22 @@ namespace Bank_Midterm_Project
         double depositAmount = 0;
         double withdrawalAmount = 0;
         double total = 100;
-        DateTime d1;
+        double intRate = 0.05;
+        DateTime d1 = new DateTime(2016, 1, 1);
         DateTime d2;
         String ID;
 
         public Account(String arg_ID)
         {
             ID = arg_ID;
+        }
+        public Account()
+        {
+
+        }
+        public void datePrompt()
+        {
+
         }
 
         public void menu()
@@ -53,6 +62,7 @@ namespace Bank_Midterm_Project
                     Console.WriteLine("Thank you for banking with the Bank of UMSL.");
                     RunAccount ra = new RunAccount();
                     ra.writeArray();
+                    Environment.Exit(3);
                 }
 
 
@@ -66,17 +76,19 @@ namespace Bank_Midterm_Project
 
         public void deposit()
         {
+            Console.WriteLine("Please enter the current date:\n");
             Console.WriteLine("Enter amount of deposit");
             depositAmount = Convert.ToInt32(Console.ReadLine());
-            total = total + depositAmount;
-            Console.WriteLine("Congratulations, you have successfully deposited $" + depositAmount + " into your account.\nYour total balance is currently $" + total);
+            balance = balance + depositAmount;
+            Console.WriteLine("\n\nCongratulations, you have successfully deposited $" + depositAmount + " into your account.\nYour total balance is currently $" + balance + "\n\n");
         }
         public void withdraw()
         {
+            Console.WriteLine("Please enter the current date:\n");
             Console.WriteLine("Enter amount of withdrawal:\t");
             withdrawalAmount = Convert.ToInt32(Console.ReadLine());
             total = total - withdrawalAmount;
-            Console.WriteLine("Congratulations, you have successfully withdrawn $" + withdrawalAmount + " from your account.\nYour total balance is currently $" + total);
+            Console.WriteLine("\n\nCongratulations, you have successfully withdrawn $" + withdrawalAmount + " from your account.\nYour total balance is currently $" + balance + "\n\n");
         }
 
         public void calcInt()

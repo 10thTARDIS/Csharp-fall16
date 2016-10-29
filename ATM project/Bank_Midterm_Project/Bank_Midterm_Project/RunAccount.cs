@@ -11,7 +11,7 @@ namespace Bank_Midterm_Project
     public class RunAccount
     {
         Account[] acctArray = new Account[3];
-        RunAccount ra = new RunAccount();
+        //RunAccount ra = new RunAccount();
         //private static int i;
         bool acctscreated = false;
         bool acctsloaded = false;
@@ -37,7 +37,7 @@ namespace Bank_Midterm_Project
                 {
                     ra.readArray();
                 }
-                else if (input == 3 && ra.acctscreated == true)
+                else if (input == 3 && ra.acctscreated == true || ra.acctsloaded == true)
                 {
                     ra.pickAccountMenu();
                 }
@@ -51,7 +51,7 @@ namespace Bank_Midterm_Project
                     {
                         Console.WriteLine("You have already populated the accounts.  Please try again.");
                     }
-                    else if (input == 2 && ra.acctscreated == true)
+                    else if (input == 2 && ra.acctsloaded == true)
                     {
                         Console.WriteLine("You have already loaded the accounts.  Please try again.");
                     }
@@ -75,7 +75,7 @@ namespace Bank_Midterm_Project
 
             Stream FileStream = File.Create("test.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
-            serializer.Serialize(FileStream, ra.acctArray);
+            serializer.Serialize(FileStream, acctArray);
             FileStream.Close();
         }
 
@@ -85,12 +85,12 @@ namespace Bank_Midterm_Project
             XmlSerializer deserializer = new XmlSerializer(typeof(Account[]));
             acctArray = (Account[])deserializer.Deserialize(FileStream);
             FileStream.Close();
+            acctsloaded = true;
         }
 
 
         public void populateArray()
         {
-            //int[] acctArray = new int[3];
             //prompt for username
             Console.WriteLine("Please enter three account numbers, separated by spaces:");
             string[] tokens = Console.ReadLine().Split();
@@ -107,13 +107,20 @@ namespace Bank_Midterm_Project
             int input = -1;
             while (input != 4)
             {
-                Console.WriteLine("Please enter 0, 1, or 2 for your account.  4 to quit.");
+                Console.WriteLine("Please enter your account number.  -99 to exit.");
                 sinput = Console.ReadLine();
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
                 {
-                    ra.acctArray[input].menu();
+                    for (int i = 0; i < acctArray.Length; i++)
+                    {
+                        //if (acctArray[i] != null && acctArray[i].getAccountNum() == input)
+                        {
+                            acctArray[i].datePrompt();
+                        }
+                    }
                 }
+                else Console.WriteLine("Goodbye.");
             }
         }
     }
