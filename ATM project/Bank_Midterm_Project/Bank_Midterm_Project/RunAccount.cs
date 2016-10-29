@@ -114,7 +114,7 @@ namespace Bank_Midterm_Project
                 {
                     for (int i = 0; i < acctArray.Length; i++)
                     {
-                        //if (acctArray[i] != null && acctArray[i].getAccountNum() == input)
+                        if (acctArray[i] != null && acctArray[i].getAccountNum() == input)
                         {
                             acctArray[i].datePrompt();
                         }
