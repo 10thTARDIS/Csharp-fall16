@@ -1,0 +1,40 @@
+3844/ 6805 FS 2016
+
+Asg1 Requirements
+
+
+1.	You are to write a simple ATM like system that will be menu driven and allow you to do the following.
+  a.	Deposit
+  b.	Withdraw
+  c.	Check Balance
+  d.	Exit
+2.	You must update the balance with each transaction. 
+3.	You must calculate interest based on the entering of dates. This can be accomplished using the Gregorian Calendar Class and DateTime Class. (Available at MSDN)- NOTE you only have to use dates for the current year so that they can be converted to Julian calendar dates to calculate the difference for the interest calculation.
+4.	Interest must be calculated based on the dates and with each transaction, even when checking the balance.
+5.	You must make sure that the system will not allow you to back date items.
+6.	Your balance should default to 100 dollars and the interest rate should default to 5%.
+7.	The system must return to the main menu when you are done with all transactions.
+8.	You must format your output in US Dollars and round to 2 decimal points for cents.
+9.	Your program should have the following classes and functions (suggested)
+   a.	ATM Class
+    i.	Main Method to start the program
+    ii.	TopMenu ( That will allow user to load accounts or populate accounts “if first time running program”, choose accounts or exit) 
+    iii.	Array of Accounts as a field. (Chapt 8 in book we will cover in week 7)
+  b.	Account Class
+    i.	Constructor( ) to initialize and set balance to 100 for each new account.
+    ii.	Menu ( ) will show the following options which in turn will call the necessary methods
+      1.	Deposit
+      2.	Withdraw
+      3.	Check Balance
+      4.	Exit – this will bust out of loop and take you back to the Top Menu in ATM
+    iii.	Necessary Accessor Methods for members
+    iv.	Method(s) to get date entry
+    v.	Method to calculate interest
+10.	You must get the system to work with more than one account
+  a.	You will need to create an array, arraylist, or collection of accounts (NO MORE THAN 3 Objects in a collection)
+  b.	You will need to loop through these accounts to determine which account the user will work with.
+    i.	Such as;  account 0, 1 or 2
+    ii.	Or use a field as an account number and loop through looking for that specific account number
+11.	You must have the project write out the results to a file.
+12.	You must have the program start up and read the results in from the file.
+13.	Good Luck!!! We will continue to discuss in class until the project is due on Nov. 3rd
