@@ -33,7 +33,7 @@ namespace Bank_Midterm_Project
                 {
                     ra.populateArray();
                 }
-                else if (input == 2 && ra.acctsloaded == false)
+                else if (input == 2 && ra.acctsloaded == false && ra.acctscreated == false)
                 {
                     ra.readArray();
                 }
@@ -55,6 +55,10 @@ namespace Bank_Midterm_Project
                     {
                         Console.WriteLine("You have already loaded the accounts.  Please try again.");
                     }
+                    else if (input == 2 && ra.acctscreated == true)
+                    {
+                        Console.WriteLine("You have already created accounts.  Please try again.");
+                    }
                     else if (input == 3 && ra.acctscreated == false)
                     {
                         Console.WriteLine("You must create the accounts first.  Please try again.");
@@ -71,12 +75,14 @@ namespace Bank_Midterm_Project
 
         public void writeArray()
         {
-            Console.WriteLine("\nYour changes have been saved.  Goodbye.");
+
 
             Stream FileStream = File.Create("test.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
             serializer.Serialize(FileStream, acctArray);
             FileStream.Close();
+
+            Console.WriteLine("\nYour changes have been saved.  Goodbye.");
         }
 
         public void readArray()
@@ -92,12 +98,14 @@ namespace Bank_Midterm_Project
         public void populateArray()
         {
             //prompt for username
-            Console.WriteLine("Please enter three account numbers, separated by spaces:");
-            string[] tokens = Console.ReadLine().Split();
-            for (int i = 0; i < acctArray.Length; i++)
-            {
-                acctArray[i] = new Account(tokens[i]);
-            }
+            //Console.WriteLine("Please enter three account numbers, separated by spaces:");
+            //string[] tokens = Console.ReadLine().Split();
+            //for (int i = 0; i < acctArray.Length; i++)
+            //{
+            //    acctArray[i] = new Account(tokens[i]);
+            //}
+            int[] acctArray = { 100, 100, 100 };
+            writeArray();
             acctscreated = true;
         }
 
@@ -112,7 +120,7 @@ namespace Bank_Midterm_Project
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
                 {
-                    acctArray[input].menu();
+                    //acctArray[Account.ID].menu();
                 }
                 else Console.WriteLine("Goodbye.");
             }

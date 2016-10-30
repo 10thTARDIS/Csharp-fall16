@@ -11,27 +11,28 @@ namespace Bank_Midterm_Project
         double balance = 100;
         double depositAmount = 0;
         double withdrawalAmount = 0;
-        double total = 100;
+        //double total = 100;
         double intRate = 0.05;
         DateTime d1 = new DateTime(2016, 1, 1);
-        DateTime d2;
+        DateTime d2 = DateTime.Now;
         String ID;
 
         public Account(String arg_ID)
         {
             ID = arg_ID;
+            double balance = 100;
         }
         public Account()
         {
-
+            //double balance = 100;
         }
         public void datePrompt()
         {
             //Console.WriteLine("Please enter date in [mm / dd / yyyy]");
             //string mydate = Console.ReadLine();
-            DateTime d1 = DateTime.Now;
-            string format = "d/M/yyyy";
-            Console.WriteLine(DateTime.ToString(format));
+            //DateTime d2 = DateTime.Now;
+            //string format = "d/M/yyyy";
+            //Console.WriteLine(DateTime.Now.ToString(format));
         }
 
         public void menu()
@@ -91,7 +92,7 @@ namespace Bank_Midterm_Project
             Console.WriteLine("Please enter the current date:\n");
             Console.WriteLine("Enter amount of withdrawal:\t");
             withdrawalAmount = Convert.ToInt32(Console.ReadLine());
-            total = total - withdrawalAmount;
+            balance = balance - withdrawalAmount;
             Console.WriteLine("\n\nCongratulations, you have successfully withdrawn $" + withdrawalAmount + " from your account.\nYour total balance is currently $" + balance + "\n\n");
         }
 
