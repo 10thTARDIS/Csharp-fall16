@@ -76,8 +76,8 @@ namespace Bank_Midterm_Project
         public void writeArray()
         {
             Account ac = new Account();
-            acctArray[Array.IndexOf(acctArray, accountNumber)] = ac.balance;
-
+            //acctArray[Array.IndexOf(acctArray, accountNumber)] = ac.balance;
+            acctArray[accountNumber] = ac.balance;
             Stream FileStream = File.Create("test.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
             serializer.Serialize(FileStream, acctArray);

@@ -8,7 +8,7 @@ namespace Bank_Midterm_Project
 {
     public class Account
     {
-                public double balance = 100;
+        public double balance = 100;
         double depositAmount = 0;
         double withdrawalAmount = 0;
         //double total = 100;
@@ -18,6 +18,7 @@ namespace Bank_Midterm_Project
         String ID;
         double totalDays;
         double interest;
+
 
         public Account(String arg_ID)
         {
@@ -41,7 +42,8 @@ namespace Bank_Midterm_Project
             RunAccount ra = new RunAccount();
             object an;
             an = (object)ra.accountNumber;
-            balance = (double)ra.acctArray[Array.IndexOf(ra.acctArray, ra.accountNumber)];
+            //balance = (double)ra.acctArray[Array.IndexOf(ra.acctArray, ra.accountNumber)];
+            //balance = ra.acctArray[ra.accountNumber];
             int input = 0;
             while (input != 4)
             {
