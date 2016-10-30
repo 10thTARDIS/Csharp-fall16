@@ -105,20 +105,14 @@ namespace Bank_Midterm_Project
         {
             string sinput = null;
             int input = -1;
-            while (input != 4)
+            while (input != -99)
             {
                 Console.WriteLine("Please enter your account number.  -99 to exit.");
                 sinput = Console.ReadLine();
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
                 {
-                    for (int i = 0; i < acctArray.Length; i++)
-                    {
-                        if (acctArray[i] != null && acctArray[i].getAccountNum() == input)
-                        {
-                            acctArray[i].datePrompt();
-                        }
-                    }
+                    acctArray[input].menu();
                 }
                 else Console.WriteLine("Goodbye.");
             }

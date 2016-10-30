@@ -27,7 +27,11 @@ namespace Bank_Midterm_Project
         }
         public void datePrompt()
         {
-
+            //Console.WriteLine("Please enter date in [mm / dd / yyyy]");
+            //string mydate = Console.ReadLine();
+            DateTime d1 = DateTime.Now;
+            string format = "d/M/yyyy";
+            Console.WriteLine(DateTime.ToString(format));
         }
 
         public void menu()
@@ -98,7 +102,5 @@ namespace Bank_Midterm_Project
             //return (d1 - d2).TotalDays;
             Console.WriteLine("Your current balance as of " + d1 + " is $" + balance);
         }
-
-        
     }
 }
