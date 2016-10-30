@@ -105,6 +105,11 @@ namespace Bank_Midterm_Project
             withdrawalAmount = Convert.ToInt32(Console.ReadLine());
             balance = balance - withdrawalAmount;
             Console.WriteLine("\n\nCongratulations, you have successfully withdrawn $" + withdrawalAmount + " from your account.\nYour total balance is currently $" + balance + "\n\n");
+            if(balance <= 0)
+            {
+                balance -= 50;
+                Console.WriteLine("You have a negative balance.  An overdraft fee of $50 has been charged to your account.\nYour total balance is currently $" + balance);
+            }
         }
 
         public void calcInt()
