@@ -15,8 +15,9 @@ namespace Bank_Midterm_Project
         //private static int i;
         bool acctsloaded = false;
         //object acctArray = null;
-        object[] acctArray = { 100, 100, 100 };
+        public object[] acctArray = { 100, 100, 100 };
         bool acctscreated = true;
+        public int accountNumber;
 
         public static void Main(String[] args)
         {
@@ -74,6 +75,9 @@ namespace Bank_Midterm_Project
 
         public void writeArray()
         {
+            Account ac = new Account();
+            acctArray[Array.IndexOf(acctArray, accountNumber)] = ac.balance;
+
             Stream FileStream = File.Create("test.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
             serializer.Serialize(FileStream, acctArray);
@@ -108,7 +112,8 @@ namespace Bank_Midterm_Project
         public void pickAccountMenu()
         {
             string sinput = null;
-            int input = -1;
+            int input;
+            input = -1;
             while (input != -99)
             {
                 Console.WriteLine("Please enter the account number (0, 1, or 2).  -99 to exit.");
@@ -116,7 +121,10 @@ namespace Bank_Midterm_Project
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
                 {
-                    acctArray[Account.ID].menu();
+                    //acctArray[Account.ID].menu();
+                    accountNumber = input;
+                    Account acct = new Account();
+                    acct.menu();
                 }
                 else Console.WriteLine("Goodbye.");
             }

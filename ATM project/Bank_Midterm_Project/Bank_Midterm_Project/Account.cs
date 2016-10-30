@@ -8,7 +8,7 @@ namespace Bank_Midterm_Project
 {
     public class Account
     {
-        double balance = 100;
+                public double balance = 100;
         double depositAmount = 0;
         double withdrawalAmount = 0;
         //double total = 100;
@@ -38,6 +38,10 @@ namespace Bank_Midterm_Project
 
         public void menu()
         {
+            RunAccount ra = new RunAccount();
+            object an;
+            an = (object)ra.accountNumber;
+            balance = (double)ra.acctArray[Array.IndexOf(ra.acctArray, ra.accountNumber)];
             int input = 0;
             while (input != 4)
             {
@@ -69,7 +73,7 @@ namespace Bank_Midterm_Project
                 else if (input == 4)
                 {
                     Console.WriteLine("Thank you for banking with the Bank of UMSL.");
-                    RunAccount ra = new RunAccount();
+                    //RunAccount ra = new RunAccount();
                     ra.writeArray();
                     System.Threading.Thread.Sleep(2000);
                     Environment.Exit(0);
