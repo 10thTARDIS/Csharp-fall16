@@ -21,68 +21,71 @@ namespace Bank_Midterm_Project
             int input;
             do
             {
+                ra.populateArray();
+
+
                 Console.WriteLine("Please enter a choice:");
-                Console.WriteLine("1) Populate Accounts");
-                Console.WriteLine("2) Load Accounts From File");
-                Console.WriteLine("3) Select Account");
-                Console.WriteLine("4) Exit");
+                //Console.WriteLine("1) Populate Accounts");
+                Console.WriteLine("1) Load Accounts From File");
+                Console.WriteLine("2) Select Account");
+                Console.WriteLine("3) Exit");
 
                 input = Convert.ToInt32(Console.ReadLine());
 
-                if (input == 1 && ra.acctscreated == false)
+                if (input == 1 && ra.acctsloaded == false) /*&& ra.acctscreated == false)*/
                 {
-                    ra.populateArray();
-                }
-                else if (input == 2 && ra.acctsloaded == false && ra.acctscreated == false)
-                {
+                    //ra.populateArray();
                     ra.readArray();
                 }
-                else if (input == 3 && ra.acctscreated == true || ra.acctsloaded == true)
+                else if (input == 2 && ra.acctscreated == true || ra.acctsloaded == true)  /*&& ra.acctsloaded == false && ra.acctscreated == false)*/
                 {
                     ra.pickAccountMenu();
                 }
-                else if (input == 4)
+                else if (input == 3) /*&& ra.acctscreated == true || ra.acctsloaded == true)*/
                 {
                     ra.writeArray();
                 }
+                //else if (input == 4)
+                //{
+                //    ra.writeArray();
+                //}
                 else
                 {
-                    if (input == 1 && ra.acctscreated == true)
+                    if (input == 1 && ra.acctsloaded == true) /*ra.acctscreated == true)*/
                     {
-                        Console.WriteLine("You have already populated the accounts.  Please try again.");
+                        //Console.WriteLine("You have already populated the accounts.  Please try again.");
+                        Console.WriteLine("You have already loaded the accounts.  Please try again.");
                     }
                     else if (input == 2 && ra.acctsloaded == true)
                     {
                         Console.WriteLine("You have already loaded the accounts.  Please try again.");
                     }
-                    else if (input == 2 && ra.acctscreated == true)
-                    {
-                        Console.WriteLine("You have already created accounts.  Please try again.");
-                    }
-                    else if (input == 3 && ra.acctscreated == false)
-                    {
-                        Console.WriteLine("You must create the accounts first.  Please try again.");
-                    }
+                    //else if (input == 2 && ra.acctscreated == true)
+                    //{
+                    //    Console.WriteLine("You have already created accounts.  Please try again.");
+                    //}
+                    //else if (input == 3 && ra.acctscreated == false)
+                    //{
+                    //    Console.WriteLine("You must create the accounts first.  Please try again.");
+                    //}
                 }
 
 
             } while (input != 5);
         }
-                //ATM atm = new ATM();
-                //atm.topMenu();
+        //ATM atm = new ATM();
+        //atm.topMenu();
 
 
 
         public void writeArray()
         {
-
-
             Stream FileStream = File.Create("test.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
             serializer.Serialize(FileStream, acctArray);
             FileStream.Close();
 
-            Console.WriteLine("\nYour changes have been saved.  Goodbye.");
+            //Console.WriteLine("\nYour changes have been saved.  Goodbye.");
         }
 
         public void readArray()
@@ -105,7 +108,6 @@ namespace Bank_Midterm_Project
             //    acctArray[i] = new Account(tokens[i]);
             //}
             int[] acctArray = { 100, 100, 100 };
-            writeArray();
             acctscreated = true;
         }
 
@@ -121,7 +123,7 @@ namespace Bank_Midterm_Project
                 if (input != -99)
                 {
                     //acctArray[Account.ID].menu();
-                    Account acc = new Account();
+                    Account acc = new Account();  //this is a stopgap to let us test other stuff MUST BE REMOVED
                     acc.menu();
                 }
                 else Console.WriteLine("Goodbye.");

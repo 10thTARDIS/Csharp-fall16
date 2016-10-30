@@ -22,11 +22,10 @@ namespace Bank_Midterm_Project
         public Account(String arg_ID)
         {
             ID = arg_ID;
-            //double balance = 100;
         }
         public Account()
         {
-            //double balance = 100;
+
         }
         public void datePrompt()
         {
@@ -42,7 +41,10 @@ namespace Bank_Midterm_Project
             int input = 0;
             while (input != 4)
             {
-                Console.WriteLine("Welcome to the Bank of UMSL.\n Please enter a choice:");
+                //We call Calculate Interest at the start of the program, to prevent later changes from affecting interest.
+                calcInt();
+
+                Console.WriteLine("\nWelcome to the Bank of UMSL.\n\nPlease enter a choice:\n");
                 Console.WriteLine("1) Deposit");
                 Console.WriteLine("2) Withdraw");
                 Console.WriteLine("3) Check Balance");
@@ -69,11 +71,11 @@ namespace Bank_Midterm_Project
                     Console.WriteLine("Thank you for banking with the Bank of UMSL.");
                     RunAccount ra = new RunAccount();
                     ra.writeArray();
-                    Environment.Exit(3);
+                    Environment.Exit(30);
                 }
 
 
-                else if (input != 1 || input != 2 || input != 3 || input != 4) //not finished.  || = or, && = and
+                else if (input != 1 || input != 2 || input != 3 || input != 4)
                 {
                     Console.WriteLine("Invalid input, please try again.");
 
@@ -83,16 +85,16 @@ namespace Bank_Midterm_Project
 
         public void deposit()
         {
-            Console.WriteLine("Please enter the current date:\n");
-            Console.WriteLine("Enter amount of deposit");
+            //Console.WriteLine("Please enter the current date:\n");
+            Console.WriteLine("\nEnter amount of deposit");
             depositAmount = Convert.ToInt32(Console.ReadLine());
             balance = balance + depositAmount;
             Console.WriteLine("\n\nCongratulations, you have successfully deposited $" + depositAmount + " into your account.\nYour total balance is currently $" + balance + "\n\n");
         }
         public void withdraw()
         {
-            Console.WriteLine("Please enter the current date:\n");
-            Console.WriteLine("Enter amount of withdrawal:\t");
+            //Console.WriteLine("Please enter the current date:\n");
+            Console.WriteLine("\nEnter amount of withdrawal:\t");
             withdrawalAmount = Convert.ToInt32(Console.ReadLine());
             balance = balance - withdrawalAmount;
             Console.WriteLine("\n\nCongratulations, you have successfully withdrawn $" + withdrawalAmount + " from your account.\nYour total balance is currently $" + balance + "\n\n");
@@ -101,7 +103,7 @@ namespace Bank_Midterm_Project
         public void calcInt()
         {
             //Console.WriteLine("Please enter the current date:");
-            
+
             totalDays = (d2 - d1).TotalDays;
             interest = (totalDays / 365) * intRate;
             balance += interest;
@@ -112,7 +114,7 @@ namespace Bank_Midterm_Project
 
         public void checkBalance()
         {
-            calcInt();
+            //calcInt();
             Console.WriteLine("\n\nYour current balance as of " + d2 + " is $" + balance + "\nYou have earned $" + interest + " in interest to date.\n\n");
         }
     }
