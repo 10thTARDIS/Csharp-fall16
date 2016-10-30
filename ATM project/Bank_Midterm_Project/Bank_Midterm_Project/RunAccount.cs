@@ -85,7 +85,7 @@ namespace Bank_Midterm_Project
         public void readArray()
         {
             Stream FileStream = File.OpenRead("test.xml");
-            XmlSerializer deserializer = new XmlSerializer(typeof(Account[]));
+            XmlSerializer deserializer = new XmlSerializer(typeof(int[]));
             acctArray = (Account[])deserializer.Deserialize(FileStream);
             FileStream.Close();
             acctsloaded = true;
@@ -117,8 +117,6 @@ namespace Bank_Midterm_Project
                 if (input != -99)
                 {
                     acctArray[Account.ID].menu();
-                    Account acc = new Account();  //this is a stopgap to let us test other stuff MUST BE REMOVED
-                    acc.menu();
                 }
                 else Console.WriteLine("Goodbye.");
             }
