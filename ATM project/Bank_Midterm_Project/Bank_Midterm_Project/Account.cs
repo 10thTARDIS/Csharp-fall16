@@ -71,7 +71,8 @@ namespace Bank_Midterm_Project
                     Console.WriteLine("Thank you for banking with the Bank of UMSL.");
                     RunAccount ra = new RunAccount();
                     ra.writeArray();
-                    Environment.Exit(30);
+                    System.Threading.Thread.Sleep(2000);
+                    Environment.Exit(0);
                 }
 
 
