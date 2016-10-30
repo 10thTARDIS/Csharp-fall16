@@ -111,7 +111,7 @@ namespace Bank_Midterm_Project
             int input = -1;
             while (input != -99)
             {
-                Console.WriteLine("Please enter your account number.  -99 to exit.");
+                Console.WriteLine("Please enter the account number (0, 1, or 2).  -99 to exit.");
                 sinput = Console.ReadLine();
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
