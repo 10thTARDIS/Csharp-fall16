@@ -121,6 +121,8 @@ namespace Bank_Midterm_Project
                 if (input != -99)
                 {
                     //acctArray[Account.ID].menu();
+                    Account acc = new Account();
+                    acc.menu();
                 }
                 else Console.WriteLine("Goodbye.");
             }

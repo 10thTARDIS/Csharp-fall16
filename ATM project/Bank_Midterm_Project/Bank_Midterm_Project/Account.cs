@@ -16,11 +16,13 @@ namespace Bank_Midterm_Project
         DateTime d1 = new DateTime(2016, 1, 1);
         DateTime d2 = DateTime.Now;
         String ID;
+        double totalDays;
+        double interest;
 
         public Account(String arg_ID)
         {
             ID = arg_ID;
-            double balance = 100;
+            //double balance = 100;
         }
         public Account()
         {
@@ -59,7 +61,7 @@ namespace Bank_Midterm_Project
 
                 else if (input == 3)
                 {
-                    calcInt();
+                    checkBalance();
                 }
 
                 else if (input == 4)
@@ -98,10 +100,20 @@ namespace Bank_Midterm_Project
 
         public void calcInt()
         {
-            Console.WriteLine("Please enter the current date:");
+            //Console.WriteLine("Please enter the current date:");
             
-            //return (d1 - d2).TotalDays;
-            Console.WriteLine("Your current balance as of " + d1 + " is $" + balance);
+            totalDays = (d2 - d1).TotalDays;
+            interest = (totalDays / 365) * intRate;
+            balance += interest;
+            balance = Math.Round(balance, 2);
+            interest = Math.Round(interest, 2);
+
+        }
+
+        public void checkBalance()
+        {
+            calcInt();
+            Console.WriteLine("\n\nYour current balance as of " + d2 + " is $" + balance + "\nYou have earned $" + interest + " in interest to date.\n\n");
         }
     }
 }
