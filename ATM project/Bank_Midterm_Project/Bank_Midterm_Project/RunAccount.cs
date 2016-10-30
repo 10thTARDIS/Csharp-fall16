@@ -15,7 +15,7 @@ namespace Bank_Midterm_Project
         //private static int i;
         bool acctsloaded = false;
         //object acctArray = null;
-        public object[] acctArray = { 100, 100, 100 };
+        public Account[] acctArray = { new Account("123"), new Account("456"), new Account("789") };
         bool acctscreated = true;
         public int accountNumber;
 
@@ -50,7 +50,7 @@ namespace Bank_Midterm_Project
                     ra.writeArray();
                     Console.WriteLine("\nYour changes have been saved.  Goodbye.");
                     System.Threading.Thread.Sleep(2000);
-                    Environment.Exit(0);
+                    //Environment.Exit(0);
                 }
                 //else if (input == 4)
                 //{
@@ -70,14 +70,14 @@ namespace Bank_Midterm_Project
                 }
 
 
-            } while (input != 5);
+            } while (input != 3);
         }
 
         public void writeArray()
         {
-            Account ac = new Account();
+            //Account ac = new Account();
             //acctArray[Array.IndexOf(acctArray, accountNumber)] = ac.balance;
-            acctArray[accountNumber] = ac.balance;
+            //acctArray[accountNumber] = ac.balance;
             Stream FileStream = File.Create("test.xml");
             XmlSerializer serializer = new XmlSerializer(typeof(Account[]));
             serializer.Serialize(FileStream, acctArray);
@@ -89,7 +89,7 @@ namespace Bank_Midterm_Project
         public void readArray()
         {
             Stream FileStream = File.OpenRead("test.xml");
-            XmlSerializer deserializer = new XmlSerializer(typeof(int[]));
+            XmlSerializer deserializer = new XmlSerializer(typeof(Account[]));
             acctArray = (Account[])deserializer.Deserialize(FileStream);
             FileStream.Close();
             acctsloaded = true;
@@ -121,10 +121,10 @@ namespace Bank_Midterm_Project
                 input = Convert.ToInt32(sinput);
                 if (input != -99)
                 {
-                    //acctArray[Account.ID].menu();
-                    accountNumber = input;
-                    Account acct = new Account();
-                    acct.menu();
+                    acctArray[input].menu();
+                    //accountNumber = input;
+                    //Account acct = new Account();
+                    //acct.menu();
                 }
                 else Console.WriteLine("Goodbye.");
             }

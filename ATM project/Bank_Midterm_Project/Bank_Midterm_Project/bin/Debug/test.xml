@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ArrayOfAccount xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Account>
+    <balance>100</balance>
+  </Account>
+  <Account>
+    <balance>1100.08</balance>
+  </Account>
+  <Account>
+    <balance>100</balance>
+  </Account>
+</ArrayOfAccount>

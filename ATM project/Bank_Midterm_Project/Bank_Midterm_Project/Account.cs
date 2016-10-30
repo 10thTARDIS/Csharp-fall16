@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Bank_Midterm_Project
 {
+    [Serializable()]
     public class Account
     {
         public double balance = 100;
@@ -71,15 +72,16 @@ namespace Bank_Midterm_Project
                 {
                     checkBalance();
                 }
+                
 
-                else if (input == 4)
-                {
-                    Console.WriteLine("Thank you for banking with the Bank of UMSL.");
-                    //RunAccount ra = new RunAccount();
-                    ra.writeArray();
-                    System.Threading.Thread.Sleep(2000);
-                    Environment.Exit(0);
-                }
+                //else if (input == 4)
+                //{
+                //    Console.WriteLine("Thank you for banking with the Bank of UMSL.");
+                //    //RunAccount ra = new RunAccount();
+                //    ra.writeArray();
+                //    System.Threading.Thread.Sleep(2000);
+                //    Environment.Exit(0);
+                //}
 
 
                 else if (input != 1 || input != 2 || input != 3 || input != 4)
